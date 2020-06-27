@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// контроллер главной страницы только с одним методом и ключем 'home'
+Route::resource('/', 'IndexController', [
+    'only' => ['index'],
+    'names'=> ['index' => 'home']
+]);
+
